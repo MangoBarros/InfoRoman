@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Romanic Info</title>
+    <title>Roman Info</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -20,9 +20,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{asset('css/custom.css')}}" rel="stylesheet">
 </head>
-<body class="bg-Roman-orange">
+<body class="bg-secondary">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-Roman-blue shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Romanic Info
@@ -50,6 +50,30 @@
                                 </li>
                             @endif
                         @else
+                            <!--User options -->
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Actions <span class="caret"></span>
+                                </a>
+
+                                
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href='info'>
+                                           
+                                            See Roman Info
+                                        </a>
+
+                                        <a class="dropdown-item" href='info/create'>
+                                           
+                                           Add Roman Info
+                                        </a>
+    
+                                        
+                                    
+                                </div>
+                            </li>
+
+                            <!--User info -->
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
